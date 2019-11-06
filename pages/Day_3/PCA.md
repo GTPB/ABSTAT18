@@ -164,4 +164,4 @@ text(t(scores)[,1]/sd[1]+0.1,t(scores)[,2]/sd[2]+0.1,seq(1:nrow(t(scores))) ,col
 
 ### Back
 
-Back to [main page](../index.md).
+Back to [main page]((../../index.md)).

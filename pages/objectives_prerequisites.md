@@ -3,8 +3,6 @@ layout: page
 title: Course Pre-requisites
 ---
 
-# Course Pre-requisites
-
 Intermediate level knowledge in Statistics is necessary. There is no time to provide basic knowledge, so we will need to assume that accepted candidates have self-assessed for it in the following areas:
 - probability
 - conditional probability

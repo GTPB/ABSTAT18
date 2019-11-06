@@ -39,19 +39,19 @@ We will look into particular areas such Simulation, Bayesian Inference, Hidden M
         <ul>
           <li><a href="./assets/Day_1/r-cheat-sheet-3.pdf">R Cheat sheet</a></li>
           <li><a href="./assets/Day_1/Short-refcard.pdf">R Reference Card</a></li>
-          <li><a href="./assets/Day_1/RDistributions">Probability Distributions in R</a></li>
+          <li><a href="./assets/Day_1/RDistributions.pdf">Probability Distributions in R</a></li>
         </ul>
       </td>
       <td>
         <ul>
-          <li><a href="./pages/Day_1/Simulation.md">Probability Review (exercise)</a></li>
+          <li><a href="./pages/Day_1/Simulation">Probability Review (exercise)</a></li>
           <ul>
             <li>Random variables</li>
             <li>Parameters</li>
             <li>Discrete Distributions</li>
             <li>Continuous Distributions</li>
           </ul>
-          <li><a href="./pages/Day_1/probreview.md">Simulation (exercise)</a></li>
+          <li><a href="./pages/Day_1/probreview">Simulation (exercise)</a></li>
           <ul>
             <li>Monte Carlo simulation</li>
             <li>Parametic/Non-parametric Boostrap estimation</li>
@@ -76,11 +76,11 @@ We will look into particular areas such Simulation, Bayesian Inference, Hidden M
           <ul>
             <li><a href="./pages/Day_2/Script_Examples_05_Bayesian_Inference.R">Scipt example</a></li>
           </ul>
-          <li><a href="./pages/Day_2/Exercise_06_Gibbs_Sampling.md">Gibbs Sampling (exercise)</a></li>
+          <li><a href="./pages/Day_2/Exercise_06_Gibbs_Sampling">Gibbs Sampling (exercise)</a></li>
           <ul>
             <li><a href="./pages/Day_2/Script_Examples_06 Gibbs Sampler.R">Scipt example</a></li>
           </ul>
-          <li><a href="./pages/Day_2/Exercise_07_EM_Algorithm.md">Expectation-Maximization algorithm (exercise)</a></li>
+          <li><a href="./pages/Day_2/Exercise_07_EM_Algorithm">Expectation-Maximization algorithm (exercise)</a></li>
           <ul>
             <li><a href="./pages/Day_2/Script_Examples_07 Expectation Maximization.r">Scipt example</a></li>
           </ul>
@@ -101,7 +101,7 @@ We will look into particular areas such Simulation, Bayesian Inference, Hidden M
       </td>
       <td>
         <ul>
-          <li><a href="./pages/Day_3/PCA.md">Principal Component Analysis (exercise)</a></li>
+          <li><a href="./pages/Day_3/PCA">Principal Component Analysis (exercise)</a></li>
           <ul>
             <li><a href="./pages/Day_3/PCAR.R">Scipt example</a></li>
           </ul>

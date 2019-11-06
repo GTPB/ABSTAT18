@@ -284,4 +284,4 @@ legend(x=0.54,y=-2000,legend="MLE theta=0.534")
 
 ### Back
 
-Back to [main page](../index.md).
+Back to [main page](../../index.md).
