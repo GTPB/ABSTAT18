@@ -58,6 +58,7 @@ We will look into particular areas such Simulation, Bayesian Inference, Hidden M
             <li>Boostrap Confidence Intervals</li>
             <li>Bootstrap Hypothesis Tests for one sample/two independent samples</li>
           </ul>
+        </ul>
       </td>
     </tr>
     <tr>
