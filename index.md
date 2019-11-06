@@ -18,6 +18,8 @@ Care has been taken not to use any proprietary data or software, so that the han
 Everybody using Bioinformatics methods is implicitly using statistical methods. Moreover, proper judgment of the results often calls for a deeper level of understanding than what is required to solve scholarly exercises.
 We will look into particular areas such Simulation, Bayesian Inference, Hidden Markov Chains and Multivariate Data Analysis methods with the attitude, eyes and brains of an experienced statistician that wants to understand how the methods work and systematic way.
 
+---
+
 ## Detailed Program
 
 
