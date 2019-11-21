@@ -29,7 +29,7 @@ Additionally, we suggest that candidates acquire familiarity with RStudio by vis
 
 R Studio will be used in the course to ease-up interaction and increase productivity, but people that prefer the original R environment on the command line will be able to follow that preference
 
-<br/>
+<br>
 
 ### Back
 

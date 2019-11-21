@@ -169,8 +169,8 @@ cat("\nThe final solution, after",i,"iterations, is r* =",r,"\n")
 ```
 </p></details>
 
-<br/>
+<br>
 
 ### Back
 
-Back to [main page]((../../index.md)).
+Back to [main page](../../index.md).

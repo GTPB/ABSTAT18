@@ -29,7 +29,7 @@ She is a member of the executive commission of CEAUL (Center of Statistics and A
 Her main research interests are Statistics in Health Sciences, ROC analysis, Molecular Genetics (Microarray Data Analysis) and Bayesian Statistics. She has been a GTPB instructor in the BFB course in 2010, 2011, 2012 and Â and the ABSTAT course in 2015 and 2017.
 
 
-<br/>
+<br>
 
 ### Back
 

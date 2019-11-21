@@ -168,8 +168,8 @@ round(theta.final,2)
 ```
 </p></details>
 
-<br/>
+<br>
 
 ### Back
 
-Back to [main page]((../../index.md)).
+Back to [main page](../../index.md).

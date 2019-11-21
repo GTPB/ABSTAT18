@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Practical Exercise - Probability Review
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 The follow exercises will cover the concepts of:
@@ -44,21 +51,27 @@ select one person and observe their disease status, we define X to be 1 if they 
 **1.1** Using R, what is the probablity of the selected person has no disease.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 dbinom(0,1,0.026)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
 
 **1.2** Plot the probability mass function (pmf) of this distribution
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
   prob<-c(dbinom(0,1,0.026),dbinom(1,1,0.026))
   barplot(prob,ylab="P(X=k)",names.arg=c(0,1), width=1,xlim=c(0,4),ylim=c(0,1), main="Probability   mass function Ber(0.026)")
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -73,19 +86,19 @@ Bernoulli trials is called Binomial random variable.
 The [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the behavior of a count variable _X_ if the following conditions apply:
 
 
-1 The number of events _n_ is fixed.
+1. The number of events _n_ is fixed.
 
-2 Each observation is independent.
+2. Each observation is independent.
 
-3 Each observation represents one of two outcomes (_success_ or _failure_).
+3. Each observation represents one of two outcomes (_success_ or _failure_).
 
-4: The probability of _success_ theta is the same for each outcome.
+4. The probability of _success_ theta is the same for each outcome.
 
 
 
 **Exercise 2.** Suppose that for certain microRNA of size 20 the probability of a purine is binomially distributed with probability 0.7.
 
-**2.1** What is the probability of having 14 purines?
+**2.1.** What is the probability of having 14 purines?
 
 **2.2** What is the probability of less than or equal to 14 purines?
 
@@ -96,6 +109,7 @@ The [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution)
 **2.5** What is the standard deviation of the distribution?
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 #a)
@@ -113,6 +127,8 @@ mean_10<-20*0.7
 #e)
 sqrt(20*0.7*0.3)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -122,9 +138,11 @@ sqrt(20*0.7*0.3)
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 P(10<=X<=20)
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -147,6 +165,7 @@ where mu=E(X) and sigma=sqrt(var(X))
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 #a)
@@ -158,6 +177,8 @@ pnorm(2,1.6,0.42)-pnorm(1.2,1.6,0.42)
 #c)
 qnorm(0.15,1.6,0.42)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -175,6 +196,7 @@ log2 transformation and repeat the analysis. Use the qqnorm() and
 qqline() functions to get the normal QQ-plot. Compare your results.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 set<-c(0.12, 0.24, 0.01, 0.16, 0.18, 0.55,0.89, 1.00, 1.45,
@@ -189,6 +211,8 @@ qqline(set)
 qqnorm(new_set)
 qqline(new_set)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -213,11 +237,11 @@ qqline(new_set)
 **6.1** Obtain the log likelihood function.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
+![log likelihood function](images/solutionlike.png)
 
-![log likelihood function](Images/solutionlike.png)
-
-
+</div>
 </p></details>
 <br/>
 <br/>
@@ -236,6 +260,7 @@ Program R to solve for the maximum likelihood estimate of theta given
 this data.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 #Create a grid of theta values
@@ -264,6 +289,8 @@ lik[534]
 #MLE value for theta (corresponding vector index to lik[534])
 theta[534]
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -271,6 +298,7 @@ theta[534]
 **6.3** Plot the results
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 plot(theta,lik,xlab="theta",ylab="log likelihood",
@@ -278,9 +306,11 @@ main="MLE estimation for theta")
 abline(v=theta[534],lty=2)
 legend(x=0.54,y=-2000,legend="MLE theta=0.534")
 ```
+
+</div>
 </p></details>
 
-<br/>
+<br>
 
 ### Back
 
