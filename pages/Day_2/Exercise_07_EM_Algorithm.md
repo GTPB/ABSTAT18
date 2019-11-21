@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Practical Exercise - EM Algorithm
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 The main locus for the blood type of mice is called Ag-B (B). Several alleles are associated to this locus but for some crossovers Mendel's laws do not seem to hold. A mating AaBb x AaBb![](http://latex.codecogs.com/gif.latex?%5Cequiv%20F_1%5Ctimes%20F_1), originated a ![](http://latex.codecogs.com/gif.latex?%24F_2%24) progeny, yielding

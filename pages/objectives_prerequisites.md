@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Course Pre-requisites
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 Intermediate level knowledge in Statistics is necessary. There is no time to provide basic knowledge, so we will need to assume that accepted candidates have self-assessed for it in the following areas:

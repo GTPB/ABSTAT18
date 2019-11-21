@@ -2,6 +2,13 @@
 layout: page
 title: Instructors
 description: ABSTAT18 Course instructors description
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 ## Lisete Sousa

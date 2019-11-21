@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Principal Component Analysis
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 Consider the iris dataset (included with R) which gives the petal

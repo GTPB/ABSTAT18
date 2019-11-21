@@ -1,6 +1,13 @@
 ---
 layout: page
 title: Practical Exercise - Simulation
+schemadotorg:
+  "@context": http://schema.org/
+  "@type": CreativeWork
+  "genre": TrainingMaterial
+  isPartOf:
+      url: "https://gtpb.github.io/ABSTAT18/"
+      name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users"
 ---
 
 The follow exercises will cover the concepts of:
