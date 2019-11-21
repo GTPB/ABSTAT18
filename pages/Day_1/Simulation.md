@@ -70,6 +70,7 @@ Distribution  with different size samples and construct
 histograms and analyze them.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 # Get a vector of 4 numbers
@@ -119,6 +120,7 @@ hist(y,main="n=600",prob=T,xlab="")
 abline(h=1,col="red")
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
