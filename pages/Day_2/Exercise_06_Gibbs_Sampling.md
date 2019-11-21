@@ -33,32 +33,41 @@ where ![](http://latex.codecogs.com/gif.latex?X_i%5Cin%5C%7B0%2C1%2C2%2C%5Cldots
 * Search for the ![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7BR%7D%24) function which generates multinomially distributed random number vectors and computes multinomial probabilities.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 ?rmultinom
 ```
+
+</div>
 </p></details>
 <br/>
 
 * Simulate 1 random vector, ![](http://latex.codecogs.com/gif.latex?%24%7B%5Cbf%20x%7D%3D%28x_%7B1%7D%2Cx_%7B2%7D%2Cx_%7B3%7D%29%24), following a Multinomial distribution with parameters n=1000 and ![](http://latex.codecogs.com/gif.latex?%7B%5Cboldsymbol%5Ctheta%7D%3D%28%5Ctheta_1%2C%5Ctheta_2%2C%5Ctheta_3%29%3D%280.2%2C0.3%2C0.5%29). Store the simulated data in an object named ![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7Bdata%7D%24).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 theta<-c(0.2,0.3,0.5)
 data<-rmultinom(1,1000,theta)
 data
 ```
+
+</div>
 </p></details>
 <br/>
 
 * Calculate the probability of observing the vector (220,350,430), that is, ![](http://latex.codecogs.com/gif.latex?P%5B%28X_1%2CX_2%2CX_3%29%3D%28220%2C350%2C430%29%5C%20%7C%5C%20%5Cboldsymbol%7B%5Ctheta%7D%5D).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 dmultinom(c(220,350,430),1000,theta)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -76,11 +85,14 @@ where ![](http://latex.codecogs.com/gif.latex?a_1%2Ca_1%2Ca_3%3E0) and ![](http:
 * Search for the ![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7BR%7D%24) function which generates Dirichlet distributed random number vectors and computes Dirichlet probabilities.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 ?rdirichlet
 library(gtools)
 ```
+
+</div>
 </p></details>
 <br/>
 
@@ -88,22 +100,28 @@ library(gtools)
 * Simulate a random vector ![](http://latex.codecogs.com/gif.latex?%5Cboldsymbol%5Ctheta%5E%7B%280%29%7D%3D%28%5Ctheta_1%5E%7B%280%29%7D%2C%5Ctheta_2%5E%7B%280%29%7D%2C%5Ctheta_3%5E%7B%280%29%7D%29), from a Dirichlet distribution with hyperparameters ![](http://latex.codecogs.com/gif.latex?%7B%5Cbf%20a%7D%5E%7B%280%29%7D%3D%28a_1%5E%7B%280%29%7D%2Ca_2%5E%7B%280%29%7D%2Ca_3%5E%7B%280%29%7D%29%3D%281%2C1%2C1%29). Store the simulated vector in ![](http://latex.codecogs.com/gif.latex?%5Ctexttt%7Btheta.0%7D) and vector ![](http://latex.codecogs.com/gif.latex?%7B%5Cbf%20a%7D%5E%7B%280%29%7D) in ![](http://latex.codecogs.com/gif.latex?%5Ctexttt%7Ba.0%7D).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 a.0<-c(1,1,1)
 theta.0<-rdirichlet(1,a.0)
 theta.0
 ```
+
+</div>
 </p></details>
 <br/>
 
 * Calculate the probability density for the vector (0.15,0.25,0.6), that is, ![](http://latex.codecogs.com/gif.latex?p_%7B%5Cboldsymbol%5Ctheta%7D%5B%280.15%2C0.25%2C0.6%29%5D).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 ddirichlet(c(0.15,0.25,0.6),a.0) # Note: prob density function > 0
 ```
+
+</div>
 </p></details>
 <br/>
 
@@ -112,12 +130,15 @@ ddirichlet(c(0.15,0.25,0.6),a.0) # Note: prob density function > 0
 Simulate ![](http://latex.codecogs.com/gif.latex?%5Cboldsymbol%5Ctheta%5E%7B%281%29%7D) knowing **x** and ![](http://latex.codecogs.com/gif.latex?%5Cboldsymbol%5Ctheta%5E%7B%280%29%7D), directly from de posterior distribution (Dirichlet).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 data<-t(data) # need a row vector
 updated.theta<-rdirichlet(1,a.0+data) # Note: prob density function > 0
 updated.theta
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -129,6 +150,7 @@ updated.theta
 * Store the updated parameters for each iteration in a  matrix of order ![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7Bnr.iter%7D%5Ctimes%203%24).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 nr.iter<-5000
@@ -143,6 +165,8 @@ for(i in 1:nr.iter)
 }
 tail(theta.all.iter)  # last 6 rows
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -152,6 +176,7 @@ tail(theta.all.iter)  # last 6 rows
 * Represent graphically the trace for each parameter along the 5000 iterations.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 par(mfrow=c(1,3))
@@ -160,6 +185,8 @@ plot(1:nr.iter,theta.all.iter[,1],ylim=c(0,0.5),main=expression(paste("Trace for
 plot(1:nr.iter,theta.all.iter[,2],ylim=c(0,0.5),main=expression(paste("Trace for ",theta[2])),ylab=expression(theta),xlab="iteration")
 plot(1:nr.iter,theta.all.iter[,3],ylim=c(0,0.5),main=expression(paste("Trace for ",theta[3])),ylab=expression(theta),xlab="iteration")
 ```
+
+</div>
 </p></details>
 <br/>
 
@@ -168,11 +195,14 @@ plot(1:nr.iter,theta.all.iter[,3],ylim=c(0,0.5),main=expression(paste("Trace for
 * Find estimates of the parameters according to the decisions made in previous bullet.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 theta.final<-apply(theta.all.iter[1001:5000,],2,mean) # 2: 'by column'
 round(theta.final,2)
 ```
+
+</div>
 </p></details>
 
 <br>

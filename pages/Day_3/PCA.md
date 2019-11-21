@@ -29,14 +29,17 @@ Just the quantitative ones: petal width, petal length, sepal width, sepal length
 **2.** Plot the data and analyze the correlation between the variables.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
- ```{r}
-  data<-iris[,1:4]  # object with the variables that we are going to do PCA
+```r
+data<-iris[,1:4]  # object with the variables that we are going to do PCA
 
-  plot(data)
-  cor(data)
+plot(data)
+cor(data)
 
- ```
+```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -54,10 +57,11 @@ The covariance matrix, because the data are on the same units.
 **4.** Does your data need to be centered or standardized?
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 Just centered, because the variables are on the same units.
 
-```{r}
+```r
 Data.red<-matrix(0,nrow=nrow(data),ncol=ncol(data))
 dim(Data.red)
 
@@ -69,6 +73,8 @@ Data.red[,i]<-data[,i]-mean(data[,i])
 
 }
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -76,8 +82,9 @@ Data.red[,i]<-data[,i]-mean(data[,i])
 **5.** Compute the variance or correlation matrix acoordingly to the previous answer.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
-```{r}
+```r
 V<-cov(data) #original data
 print(V)
 
@@ -87,6 +94,7 @@ print(V2)
 # observe that the two matrices are the same
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -94,8 +102,9 @@ print(V2)
 **6.** Compute the eigenvalues and eigenvectors based on the covariance/correlation matrix.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
- ```{r}
+```r
 ev<-eigen(V2)
 names(ev)
 
@@ -104,6 +113,7 @@ ev$values   #eigenvalues
 sum(ev$values) #sum of the eigenvalues equals the total of the variance
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -111,8 +121,9 @@ sum(ev$values) #sum of the eigenvalues equals the total of the variance
 **7.** Obtain the scree plot and decide how many PC do you want to keep.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
- ```{r}
+```r
 totvar<-sum(ev$values) #sum of the eigenvalues equals the total of the variance
 
 j<-1
@@ -130,6 +141,7 @@ barplot(ev$values)
 
 Two PC
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -137,8 +149,9 @@ Two PC
 **8.** Plot the Biplot for variables and cases on the same plot.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
- ```{r}
+```r
 pc1.var<-round(var.ev[1])
 pc2.var<-round(var.ev[2])
 
@@ -160,11 +173,9 @@ text(loadings[,1]*sd[1]+0.2,loadings[,2]*sd[2]+0.2,c("Sepal.Length", "Sepal.Widt
 # Second plot the scores as points (cases)
 points(t(scores)[,1]/sd[1],t(scores)[,2]/sd[2],pch=16,col="blue")
 text(t(scores)[,1]/sd[1]+0.1,t(scores)[,2]/sd[2]+0.1,seq(1:nrow(t(scores))) ,col="black", cex=1,font=3)
-
-
-
 ```
 
+</div>
 </p></details>
 
 <br>

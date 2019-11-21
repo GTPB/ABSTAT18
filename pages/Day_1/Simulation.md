@@ -136,6 +136,7 @@ abline(h=1,col="red")
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 bin<-rbinom(200,20,0.5) # B(20,0.5)
@@ -157,6 +158,8 @@ lines(density(bin2),col="red")
 hist(pois2, main="P(30)",col="blue",prob=T)
 lines(density(pois2),col="red")
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -174,6 +177,7 @@ estimators.
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 set.seed(3) #  is used to set the random number seed,
@@ -234,7 +238,7 @@ results<-matrix(c(1,1,1,1000,1000,1000,MC_mean.1,MC_mean.2,MC_mean.3,
 print(round(results,3))
 ```
 
-
+</div>
 </p></details>
 <br/>
 <br/>
@@ -259,6 +263,7 @@ bootstrap and further examples. In addition, many other packages, such as the _g
 parametric bootstrap confidence interval for lamda.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 # 95% CI for exponential parameter lambda
@@ -308,6 +313,7 @@ d = quantile(lambda_star, c(.025,.975))
 cat(d)
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -321,6 +327,7 @@ Find the 95% parametric bootstrap confidence interval for the mean value (mu) as
 of 11 measurements).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 
@@ -358,6 +365,8 @@ plot(density(x))
 shapiro.test(x)
 t.test(x)
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -375,6 +384,7 @@ t.test(x)
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 set.seed(1234)
@@ -397,7 +407,8 @@ biasB<-meanB-mean(x)   #bias
 
 hist(mean.1000)
 ```
-f```r
+
+```r
 qqnorm(mean.1000)
 ```
 
@@ -433,6 +444,7 @@ ci.boots<-boot.ci(data.boot,0.95,type="perc")
 print(ci.boots)
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -452,6 +464,7 @@ Consider two sets of expression values of the MCM3 gene of the Golub et al. (199
 **5.4** This pair is a bootstrap 95% confidence interval for the correlation coefficient parameter.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 source("https://bioconductor.org/biocLite.R")
@@ -488,11 +501,9 @@ library(psychometric) # load package with function
 # sample size (n) is
 
 CIr(r=cor(x,y), n = 38, level = .95)
-
-
-
 ```
 
+</div>
 </p></details>
 <br/>
 <br/>
@@ -513,8 +524,9 @@ ALL expression values equals zero.
 + How can we use bootstrap to test the present hypothesis?
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
-  ```r
+```r
 library(multtest)
 data(golub)
 ?golub
@@ -559,10 +571,10 @@ lines(density(x))
 shapiro.test(x)  #normality test
 t.test(x,alternative = "greater",mu = 0)
 
-  ```
+```
 
-
- </p></details>
+</div>
+</p></details>
 <br/>
 <br/>
 
@@ -577,6 +589,7 @@ t.test(x,alternative = "greater",mu = 0)
 
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 golub.cl
@@ -622,9 +635,9 @@ shapiro.test(x2)
 var.test(x1,x2)
 test<-t.test(golub[1042,] ~ golub.cl, var.equal=T,alternative="two.sided")
 test
-
 ```
 
+</div>
 </p></details>
 
 <br>

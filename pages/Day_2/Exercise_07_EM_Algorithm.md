@@ -32,6 +32,7 @@ Estimate the recombination fraction, ![](http://latex.codecogs.com/gif.latex?%24
 * Read the data and state ao many recombinant gametes are there for each genotype.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 nAABB<-11  # 0 recombinant gametes
@@ -44,17 +45,22 @@ naaBB<-3   # 2 recombinant gametes
 naaBb<-13  # 1 recombinant gamete
 naabb<-11  # 0 recombinant gametes
 ```
+
+</div>
 </p></details>
 <br/>
 
 * Calculate ![](http://latex.codecogs.com/gif.latex?%24n_1%24), the number of individuals from 1 recombinant gametes (![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7Bn1%7D%24)).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 n1 <- nAABb + nAaBB + nAabb + naaBb
 n1
 ```
+
+</div>
 </p></details>
 <br/>
 
@@ -63,22 +69,28 @@ n1
 Note that ![](http://latex.codecogs.com/gif.latex?%24n_%7BAaBb%7D%3Dn_2%5E*&plus;n_0%5E*%24).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 n2.star <- NULL
 n2 <- nAAbb + naaBB + n2.star
 ```
+
+</div>
 </p></details>
 <br/>
 
 * Calculate n, the total number of individuals (![](http://latex.codecogs.com/gif.latex?%24%5Ctexttt%7Bn%7D%24)).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 n <- n1 + nAAbb + naaBB + nAABB + nAaBb + naabb
 n
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -88,10 +100,13 @@ n
 * Initialize ![](http://latex.codecogs.com/gif.latex?%5Ctheta%5Cin%5D0%2C0.5%5B%5Cquad%20%28%5Ctexttt%7Br%7D%29).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 r <- 0.3
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -107,6 +122,7 @@ r <- 0.3
 then, ![](http://latex.codecogs.com/gif.latex?%24n_2%5E*%3DE%28N_2%5E*%29%3Dn_%7BAaBb%7D%5Ctimes%20p%24).
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 expected <- function(r)
@@ -115,6 +131,8 @@ expected <- function(r)
  n2.star
 }
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -128,6 +146,7 @@ expected <- function(r)
 meaning that the proportion of recombinant gametes is calculated as the total number of recombinant gametes (0, 1 or 2 for each individual) over the total number of gametes for n individuals.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 update.theta <- function(n2.star)
@@ -136,6 +155,8 @@ r <- (n1+2*(nAAbb+naaBB+n2.star))/(2*n)
 r
 }
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -145,6 +166,7 @@ r
 * Compute the cycle.
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 i<-0
@@ -163,6 +185,8 @@ while(er>=error)
  cat(i,r,"\n")
 }
 ```
+
+</div>
 </p></details>
 <br/>
 <br/>
@@ -170,12 +194,14 @@ while(er>=error)
 **Step 6 - Print the results**
 
 <details><summary>Click Here to see the answer</summary><p>
+<div markdown="1">
 
 ```r
 cat("\nThe final solution, after",i,"iterations, is r* =",r,"\n")
 ```
 </p></details>
 
+</div>
 <br>
 
 ### Back
