@@ -103,3 +103,8 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
+
+#A Jekyll plugin to convert relative links to Markdown files to their rendered equivalents.
+
+plugins:
+  - jekyll-relative-links

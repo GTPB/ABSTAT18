@@ -38,8 +38,6 @@ schemadotorg:
   license: https://creativecommons.org/licenses/by/4.0/
   inLanguage: "en-us"
   url: "https://gtpb.github.io/ABSTAT18/"
-
-
 ---
 
 ![](./assets/images/Inferring_horizontal_gene_transfer_average_GC_content.png)
