@@ -12,63 +12,53 @@ schemadotorg:
 
 The follow exercises will cover the concepts of:
 
-* Simulation
-* Parameters
-* Monte Carlo simulation
-* Parametric Bootstrap estimation
-* Non-parametric Boostrap estimation
-* Boostrap Confidence Intervals
-* Bootstrap Hypothesis Tests for one sample
-* Booststrap Hypothesis Tests for two independent samples
+-   Simulation
+-   Parameters
+-   Monte Carlo simulation
+-   Parametric Bootstrap estimation
+-   Non-parametric Boostrap estimation
+-   Boostrap Confidence Intervals
+-   Bootstrap Hypothesis Tests for one sample
+-   Booststrap Hypothesis Tests for two independent samples
 
 ### Introduction
 
 One of the greatest powers of using a computer lies in the ability to simulate things. What if you don't have any data, but you know the probability model that you want to work with? Through the power of simulation, you can use the computer to generate sample values for you. It's like doing an experiment, only in the virtual world instead of the real world. Simulation is an essential technique in computational statistics.
 
-
-* Some distributions  has a corresponding function in R that starts with "r" for random. For example, if you whant to simulate a sample with normal distribution with mean value 2 and standard deviation 1 with size 20, you can use the above R code :
-
-
+-   Some distributions  has a corresponding function in R that starts with "r" for random. For example, if you whant to simulate a sample with normal distribution with mean value 2 and standard deviation 1 with size 20, you can use the above R code :
 
 ```r
 x<-rnorm(20,mean=2,sd=1)
 ```
 
-
-
-
 ### What is simulation
 
-* (Pseudo) random numbers generated from a computer, since
-the method is completely deterministic. Thus, this numbers
-have a similar behaviour from the random numbers.
+-   (Pseudo) random numbers generated from a computer, since
+    the method is completely deterministic. Thus, this numbers
+    have a similar behaviour from the random numbers.
 
-* Random number generator is an algorithm that can generate x_{i+1} from x_i.
+-   Random number generator is an algorithm that can generate x\_{i+1} from x_i.
 
-* Require a start called "seed", i.e., a number that initiates the
-deterministic/iterative process.
+-   Require a start called "seed", i.e., a number that initiates the
+    deterministic/iterative process.
 
-* The "seed" associated to a generator method (algorithm),
-always produce the same sequence.
-
+-   The "seed" associated to a generator method (algorithm),
+    always produce the same sequence.
 
 ```r
 set.seed(1234)
 ```
 
-* This is an important characteristic, because that gives to the
-user the possibility to reproduce exactly the same results.
+-   This is an important characteristic, because that gives to the
+    user the possibility to reproduce exactly the same results.
 
 
-* Basically the uniform distribution is simulated in this way.
+-   Basically the uniform distribution is simulated in this way.
 
-
-
-> **Uniform Distribution X ~ U(a,b), a<b**
+> **Uniform Distribution X ~ U(a,b), a&lt;b**
 
 The [Uniform distribution](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous)) assigns equal probabilities to all possible ranges of equal length within which the r.v. can fall.
 This distributions is widely used in bioinformatics, Bayesian analysis, quantitative genetics and so on.
-
 
 One of the most important applications of the uniform distribution is in the generation of random numbers. That is, almost all random number generators generate random numbers on the (0,1) interval.
 
@@ -134,7 +124,6 @@ abline(h=1,col="red")
 
 **Exercise 2** Generate one sample of size 200 from each of the discrete Binomial and Poisson distributions. Compare the distributions with suitable plots. Change the parameters in each of the models to see how they infuence the distributions.
 
-
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
 
@@ -164,7 +153,6 @@ lines(density(pois2),col="red")
 <br/>
 <br/>
 
-
 ## Monte Carlo Simulation
 
 **1.1**  Generate 1000 MC replicates from samples of size 15 of a normal distribution with mu=1 and sigma=1.7.
@@ -173,8 +161,6 @@ deviation, MC bias and MC MSE, of the true parameter mu,
 considering the sample mean, 20% trimmed mean and median
 estimators.
 **1.3** Compare the results and choose the best estimator.
-
-
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
@@ -245,19 +231,16 @@ print(round(results,3))
 
 ## **Bootstrap**
 
-
->Bootstrap techniques are generally categorized as either nonparametric or parametric. Parametric bootstrap techniques assume that the data are generated
-from a standard parametric probability model. Nonparametric bootstrap techniques are more versatile. Because of their versatility, nonparametric bootstrap techniques are the more popular type of bootstrap applications.
-
->R has two specific packages devoted to the bootstrap: _bootstrap_ and _boot_.
-Both packages are worth looking at and include various applications of the
-bootstrap and further examples. In addition, many other packages, such as the _genetics_ package, contain application specific bootstrap functionality.
-
+> Bootstrap techniques are generally categorized as either nonparametric or parametric. Parametric bootstrap techniques assume that the data are generated
+> from a standard parametric probability model. Nonparametric bootstrap techniques are more versatile. Because of their versatility, nonparametric bootstrap techniques are the more popular type of bootstrap applications.
+>
+> R has two specific packages devoted to the bootstrap: _bootstrap_ and _boot_.
+> Both packages are worth looking at and include various applications of the
+> bootstrap and further examples. In addition, many other packages, such as the _genetics_ package, contain application specific bootstrap functionality.
 
 **Exercise 2** Suppose it was drawn a sample of 300 observations with sample mean(x) = 2 from an exp(lambda) distribution.
 
 **2.1** Estimate boostrap lambda and bootstrap standard error of hat(lambda) using B=1000.
-
 
 **2.2** Estimate lambda using a 95%
 parametric bootstrap confidence interval for lamda.
@@ -320,7 +303,6 @@ cat(d)
 
 **Exercise 3** The following measurements were given for weights (Kg) of 11 children with ages between 8 and 10 years old with renal disfunction: 38.43, 38.43, 38.39, 38.83, 38.45, 38.35, 38.43, 38.31, 38.32, 38.48, 38.50.
 
-
 Find the 95% parametric bootstrap confidence interval for the mean value (mu) assuming the normal distribution for the observations and sigma = 0.57 (s.d.). Compare with the classical analytic approach based on the t-distribution.
 
 **Note**:Use B=1000 bootstrap samples (each sample hence consisting
@@ -330,7 +312,6 @@ of 11 measurements).
 <div markdown="1">
 
 ```r
-
 x<-c(38.43, 38.43, 38.39, 38.83, 38.45, 38.35, 38.43, 38.31, 38.32, 38.48, 38.50)
 
 xbar<-mean(x)
@@ -381,7 +362,6 @@ t.test(x)
 **4.3** Make a histogram and a normal quantile plot of the 1000 means. Make the density plot of the 1000 replicates. This is the bootstrap distribution.
 
 **4.4** Calculate the bootstrap estimates of the mean and the standard error.
-
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
@@ -453,8 +433,6 @@ print(ci.boots)
 
 Consider two sets of expression values of the MCM3 gene of the Golub et al. (1999) data. This data set is a gene expression data (3051 genes and 38 tumor mRNA samples) from the leukemia microarray study. This gene encodes for highly conserved mini-chromosome maintenance proteins (MCM) which are involved in the initiation of eukaryotic genome replication.
 
-
-
 **5.1** Obtain a bootstrap sample from (x; y), and compute the correlation coeficient for the bootstrap sample.
 
 **5.2** Repeat the procedure [5.1] B=1000 times.
@@ -511,17 +489,17 @@ CIr(r=cor(x,y), n = 38, level = .95)
 **Exercise 6** Gdf5 gene from the Golub et al. (1999) data.
 (Adapted from Applied Statistics for Bioinformatics using R, Wim P. Krijnen).
 
-+ The corresponding expression values are contained in row 2058.
+-   The corresponding expression values are contained in row 2058.
 
-+ A quick search through the NCBI site makes it likely that this
-gene is not directly related to leukemia.
+-   A quick search through the NCBI site makes it likely that this
+    gene is not directly related to leukemia.
 
-+ Hence, we may hypothesize that the population mean of the
-ALL expression values equals zero.
+-   Hence, we may hypothesize that the population mean of the
+    ALL expression values equals zero.
 
-+ Accordingly, we test H0 : mu = 0 vs. H1 : mu > 0.
+-   Accordingly, we test H0 : mu = 0 vs. H1 : mu > 0.
 
-+ How can we use bootstrap to test the present hypothesis?
+-   How can we use bootstrap to test the present hypothesis?
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
@@ -570,7 +548,6 @@ hist(x,probability=T)
 lines(density(x))
 shapiro.test(x)  #normality test
 t.test(x,alternative = "greater",mu = 0)
-
 ```
 
 </div>
@@ -580,13 +557,11 @@ t.test(x,alternative = "greater",mu = 0)
 
 **Exercise 7** Gene CCND3 Cyclin D3
 
+-   Golub et al. (1999) argue that gene CCND3 Cyclin D3 plays an important role with respect to discriminating ALL from AML patients.
 
-+ Golub et al. (1999) argue that gene CCND3 Cyclin D3 plays an important role with respect to discriminating ALL from AML patients.
+-   We are interested in testing the null hypothesis of equal means, ie, we want to test: H0: meanvalue(ALL)=meanvalue(AML)  vs. H1: meanvalue(ALL)=~meanvalue(AML).
 
-+ We are interested in testing the null hypothesis of equal means, ie, we want to test: H0: meanvalue(ALL)=meanvalue(AML)  vs. H1: meanvalue(ALL)=~meanvalue(AML).
-
-+ Implement a boostrap test for this problem.
-
+-   Implement a boostrap test for this problem.
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">

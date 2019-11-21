@@ -12,28 +12,23 @@ schemadotorg:
 
 The follow exercises will cover the concepts of:
 
-* Random variables
-* Parameters
-* Discrete Distributions
-* Continuous Distributions
-
-
+-   Random variables
+-   Parameters
+-   Discrete Distributions
+-   Continuous Distributions
 
 The exercises will be solved using R. If you have any questions press red light of your monitor.
 
-
-### *Introduction*
+### _Introduction_
 
 Every random variable has an associated probability distribution function. This
 function is called a probability mass function in the case of a discrete random
 variable or probability density function in the case of a continuous random variable. The distribution function is used to model how the outcome
 probabilities are associated with the values of the random variable.
 
-
 For practical computations R has built-in-functions for the binomial,
 normal, t-Student, F, etc.,  where _d_ stands for density, _p_ for (cumulative) probability distribution, _q_ for quantiles, and _r_ for drawing
 random samples.
-
 
 In <https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Distributions.html> you can find the R functions for several distributions.
 
@@ -43,7 +38,6 @@ We call _Bernoulli trial_ a single trial with
 two possible outcomes: _success_ and _failure_, where theta is the probability of success.
 
 [Bernoulli distribution](https://en.wikipedia.org/wiki/Bernoulli_distribution)
-
 
 **Exercise 1**   Let's say it is known that 2.6% of the population has a certain genetic disease. Then when we randomly
 select one person and observe their disease status, we define X to be 1 if they have it and 0 if they don't.
@@ -63,6 +57,7 @@ dbinom(0,1,0.026)
 <br/>
 
 **1.2** Plot the probability mass function (pmf) of this distribution
+
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
 
@@ -76,8 +71,6 @@ dbinom(0,1,0.026)
 <br/>
 <br/>
 
-
-
 > **Binomial Distribution  X ~ Bin(n,theta)$$**
 
 The random variable which counts the number of successes in _n_ independent and identical
@@ -85,16 +78,13 @@ Bernoulli trials is called Binomial random variable.
 
 The [binomial distribution](https://en.wikipedia.org/wiki/Binomial_distribution) describes the behavior of a count variable _X_ if the following conditions apply:
 
+1.  The number of events _n_ is fixed.
 
-1. The number of events _n_ is fixed.
+2.  Each observation is independent.
 
-2. Each observation is independent.
+3.  Each observation represents one of two outcomes (_success_ or _failure_).
 
-3. Each observation represents one of two outcomes (_success_ or _failure_).
-
-4. The probability of _success_ theta is the same for each outcome.
-
-
+4.  The probability of _success_ theta is the same for each outcome.
 
 **Exercise 2.** Suppose that for certain microRNA of size 20 the probability of a purine is binomially distributed with probability 0.7.
 
@@ -133,14 +123,12 @@ sqrt(20*0.7*0.3)
 <br/>
 <br/>
 
-
 **Exercise 3.** What probability does this R code represent: pbinom(15,20,0.7)-pbinom(10,20,0.7)+dbinom(10,20,0.7)
-
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
 
-P(10<=X<=20)
+P(10&lt;=X&lt;=20)
 
 </div>
 </p></details>
@@ -153,8 +141,6 @@ where mu=E(X) and sigma=sqrt(var(X))
 
 [Normal distribution](https://pt.wikipedia.org/wiki/Distribuição_normal) is a continuous distribution.
 
-
-
 **Exercise 4.** The distribution of the expression values of the ALL patients on the Zyxin gene are distributed according to N(1.6; 0.42).
 
 **4.1** Compute the probability that the expression values are smaller than 1.2?
@@ -162,7 +148,6 @@ where mu=E(X) and sigma=sqrt(var(X))
 **4.2** What is the probability that the expression values are between 1.2 and 2.0?
 
 **4.3** What is the 15th quantile of that distribution. What does it mean?
-
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
@@ -185,8 +170,7 @@ qnorm(0.15,1.6,0.42)
 
 All normal distributions can be converted into the standard normal curve by subtracting the mean and dividing by the standard deviation: Z=(X-mu)/sigma ~ N(0,1)
 
-Such Z is called a __standard normal random variable__.  The scale of Z has no units and it is called the standardized scale.
-
+Such Z is called a **standard normal random variable**.  The scale of Z has no units and it is called the standardized scale.
 
 **Exercise 5.** Given a sample 0.12, 0.24, 0.01, 0.16, 0.18, 0.55,0.89, 1.00, 1.45 and 2.5 corresponding to intensity levels of one gene from 5 DNA chips.
 
@@ -217,29 +201,24 @@ qqline(new_set)
 <br/>
 <br/>
 
-
 ## **Maximum Likelihood Estimation**
 
-
->Likelihood function is the function of the parameters given the data. The principle of maximum likelihood estimation is that somewhere on the range of parameter values, the likelihood function hits a maximum value. The parameter values for which the likelihood function obtains its maximum are called the maximum likelihood estimates for the parameters.
-
+> Likelihood function is the function of the parameters given the data. The principle of maximum likelihood estimation is that somewhere on the range of parameter values, the likelihood function hits a maximum value. The parameter values for which the likelihood function obtains its maximum are called the maximum likelihood estimates for the parameters.
 
 **Exercise 6**  A common use of maximum likelihood estimation in genetics is to estimate parameters for the [Hardy Weinberg Equilibrium](https://www.nature.com/scitable/definition/hardy-weinberg-equation-299) model for the distribution of genotypes in a population at equilibrium. In a given population gene pool, for a two allele gene locus, alleles A and a are at frequencies p and q, respectively. According to Hardy Weinberg equilibrium the genetic frequencies of genotypes are modeled by the simple equation: p^2+2pq+q^2=1.
 
-
-  AA  |  Aa  |  aa
-------|------|------
-  p^2 |  2pq |  q^2
+| AA  | Aa  | aa  |
+| --- | --- | --- |
+| p^2 | 2pq | q^2 |
 
   The likelihood for this follows a [multinomial probability distribution](https://en.wikipedia.org/wiki/Multinomial_distribution) that we can model, where parameter theta, theta=p (and therefore 1-theta=q, theta between 0 and 1).
-
 
 **6.1** Obtain the log likelihood function.
 
 <details><summary>Click Here to see the answer</summary><p>
 <div markdown="1">
 
-![log likelihood function](images/solutionlike.png)
+![log likelihood function](../images/solutionlike.png)
 
 </div>
 </p></details>
@@ -249,12 +228,11 @@ qqline(new_set)
 **6.2** Suppose we collect data from a population sample of 500 (assume the
 population obeys Hardy Weinberg equilibrium) and obtain the data in Table:
 
-Genotype  |  Data  | Variable
-----------|--------|----------
-AA        |   134  | n_1
-Aa        |   266  | n_2
-aa        |   100  | n_3
-
+| Genotype | Data | Variable |
+| -------- | ---- | -------- |
+| AA       | 134  | n_1      |
+| Aa       | 266  | n_2      |
+| aa       | 100  | n_3      |
 
 Program R to solve for the maximum likelihood estimate of theta given
 this data.

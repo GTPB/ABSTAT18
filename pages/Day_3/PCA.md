@@ -15,7 +15,6 @@ width, petal length, sepal width, sepal length and species for 150
 irises. To view more information about the dataset, enter
 help(iris).
 
-
 **1** Wich are the variables that you can use for PCA?
 
 <details><summary>Click Here to see the answer</summary><p>
@@ -36,7 +35,6 @@ data<-iris[,1:4]  # object with the variables that we are going to do PCA
 
 plot(data)
 cor(data)
-
 ```
 
 </div>
