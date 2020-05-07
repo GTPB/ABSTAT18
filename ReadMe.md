@@ -1,4 +1,5 @@
 ## ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users using R
+[![DOI](https://zenodo.org/badge/123091386.svg)](https://zenodo.org/badge/latestdoi/123091386)
 
 ###  Instituto Gulbenkian de Ciência (IGC) - Oeiras, Portugal - April 03<sup>rd</sup> - April 06<sup>th</sup> 2018
 
