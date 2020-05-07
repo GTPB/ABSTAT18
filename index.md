@@ -9,7 +9,7 @@ schemadotorg:
        # "name" -> The name of the course
        # "description" -> Short description of the course
   name: "ABSTAT18 - Advanced Biostatistics for Bioinformatics Tool Users (using R)"
-  description: "Training Material centered in Biostatistical techniques often employed in analytical tools for high throughput data and multivariate data."
+  description: "Training Material centred in Biostatistical techniques often employed in analytical tools for high throughput data and multivariate data."
 
   # Keywords -> Consult EDAM:Topic
   keywords:  "http://edamontology.org/topic_2269"
